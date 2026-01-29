@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <header>
+        <h1>Tic-Tac-Toe Játék</h1>
+    </header>
+
+    <div id="tabla">
+        <div id="n00" onclick="lepes('00')"></div>
+        <div id="n01" onclick="lepes('01')"></div>
+        <div id="n02" onclick="lepes('02')"></div>
+
+        <div id="n10" onclick="lepes('10')"></div>
+        <div id="n11" onclick="lepes('11')"></div>
+        <div id="n12" onclick="lepes('12')"></div>
+
+        <div id="n20" onclick="lepes('20')"></div>
+        <div id="n21" onclick="lepes('21')"></div>
+        <div id="n22" onclick="lepes('22')"></div>
+    </div>
+
+
+    <script>
+    let tabla = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ];
+
+    let akt = "X";
+
+    function lepes(hova) {
+        let sor = parseInt(hova[0]);
+        let oszlop = parseInt(hova[1]);
+
+        if (tabla[sor][oszlop] == "") {
+
+            tabla[sor][oszlop] = akt;
+            document.getElementyById("n" + hova).innerText = akt;
+
+            if (akt == "X") {
+                akt = "O";
+            } else {
+                akt = "X";
+            }
+        }
+    }
+    </script>
+</body>
+</html>
